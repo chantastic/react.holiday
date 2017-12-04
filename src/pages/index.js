@@ -14,13 +14,13 @@ class BlogIndex extends React.Component {
     return (
       <div>
         <Helmet title={siteTitle} />
-        <Bio />
         {posts.map(({ node }) => {
           const title = get(node, 'frontmatter.title') || node.fields.slug
           return (
             <div key={node.fields.slug}>
               <h3
                 style={{
+                  marginTop: rhythm(1 / 2),
                   marginBottom: rhythm(1 / 4),
                 }}
               >
@@ -28,8 +28,10 @@ class BlogIndex extends React.Component {
                   {title}
                 </Link>
               </h3>
+              {/*
               <small>{node.frontmatter.date}</small>
               <p dangerouslySetInnerHTML={{ __html: node.excerpt }} />
+ */}
             </div>
           )
         })}
@@ -47,7 +49,7 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: DESC }) {
+    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
       edges {
         node {
           excerpt

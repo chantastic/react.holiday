@@ -18,19 +18,20 @@ class Bio extends React.Component {
       >
         <img
           src={profilePic}
-          alt={`Kyle Mathews`}
+          alt={`Michael Chan`}
           style={{
             marginRight: rhythm(1 / 2),
             marginBottom: 0,
             width: rhythm(2),
             height: rhythm(2),
+            borderRadius: 1000,
           }}
         />
         <p>
-          Written by <strong>Kyle Mathews</strong> who lives and works in San
-          Francisco building useful things.{' '}
-          <a href="https://twitter.com/kylemathews">
-            You should follow him on Twitter
+          By <strong>Michael Chan</strong> the most mediocre developer in the land.
+          <br />
+          <a href="https://twitter.com/chantastic">
+            Follow him on Twitter
           </a>
         </p>
       </div>

@@ -6,6 +6,14 @@ import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
 
 class BlogPostTemplate extends React.Component {
+  constructor() {
+    super();
+
+    this.state = {
+      input: ""
+    }
+  }
+
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
@@ -52,6 +60,8 @@ class BlogPostTemplate extends React.Component {
                   className="required email"
                   id="mce-EMAIL"
                   placeholder="email"
+                  onChange={e => this.setState({ input: e.target.value })}
+                  value={this.state.value}
                   style={{
                     borderRadius: 4,
                     borderWidth: 1,

@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "author": "Michael Chan <mijoch@gmail.com>",
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby-starter-blog/issues"
+    "url": "https://github.com/learnreact/react.holiday/issues"
   },
   "dependencies": {
     "gatsby": "^1.9.118",
@@ -35,7 +35,7 @@
     "eslint-plugin-react": "^7.5.1",
     "prettier": "^1.8.2"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://react.holiday",
   "keywords": [
     "gatsby"
   ],
@@ -43,7 +43,7 @@
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "https://github.com/learnreact/react.holiday"
   },
   "scripts": {
     "dev": "gatsby develop",

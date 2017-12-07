@@ -31,6 +31,6 @@ environment.
 I'm [@chantastic](https://twitter.com/chantastic). I make some other React stuff
 like [learnreact.com](https://learnreact.com) ,
 [https://reactpatterns.com](https://reactpatterns.com) , and
-[https://reactcheatsheet.com](https://reactpatterns.com).
+[https://reactcheatsheet.com](https://reactcheatsheet.com).
 
 </div>

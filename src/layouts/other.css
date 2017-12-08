@@ -27,3 +27,10 @@
 .subscribe-button:hover {
   background-color: #777;
 }
+
+*:not(pre) > code {
+  font-size: 1.05em;
+  background-color:#f5f2f0;
+  padding: 0 .25em;
+  border-radius:.25em
+}

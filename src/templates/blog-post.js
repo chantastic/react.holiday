@@ -5,22 +5,47 @@ import get from 'lodash/get'
 import Bio from '../components/Bio'
 import { rhythm, scale } from '../utils/typography'
 
+// TODO: make dynamic
+const postUrl = date =>
+  `https://react.holiday/${date.getFullYear()}/${date.getDay()}/`
+
 class BlogPostTemplate extends React.Component {
   constructor() {
-    super();
+    super()
 
     this.state = {
-      input: ""
+      input: '',
     }
   }
 
   render() {
     const post = this.props.data.markdownRemark
     const siteTitle = get(this.props, 'data.site.siteMetadata.title')
+    const url = postUrl(new Date(post.frontmatter.date))
 
     return (
       <div>
-        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`} />
+        <Helmet title={`${post.frontmatter.title} | ${siteTitle}`}>
+          <meta
+            property="og:title"
+            content={`${post.frontmatter.title} | react.holiday`}
+          />
+          <meta property="og:type" content="article" />
+          {/*
+          <meta
+            property="og:description"
+            content={}`}
+          />
+          */}
+          <meta
+            property="og:url"
+            content={url}
+          />
+          <meta
+            property="og:image"
+            content="https://react.holiday/react-holiday-og.jpg"
+          />
+        </Helmet>
         <h1>{post.frontmatter.title}</h1>
         {/*<p
           style={{
@@ -47,12 +72,12 @@ class BlogPostTemplate extends React.Component {
             name="mc-embedded-subscribe-form"
             className="validate"
             target="_blank"
-            novalidate
+            noValidate
           >
             <div id="mc_embed_signup_scroll" style={{ marginTop: rhythm(2) }}>
               <h3>Learn other React stuff...</h3>
               <div className="mc-field-group">
-                <label for="mce-EMAIL" />
+                <label htmlFor="mce-EMAIL" />
                 <input
                   type="email"
                   value=""
@@ -95,7 +120,7 @@ class BlogPostTemplate extends React.Component {
                 <input
                   type="text"
                   name="b_03b6ee2f58c8b4427c8ba9735_f97aebbc64"
-                  tabindex="-1"
+                  tabIndex="-1"
                   value=""
                 />
               </div>

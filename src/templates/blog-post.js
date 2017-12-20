@@ -1,4 +1,5 @@
 import React from 'react'
+import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
 
@@ -7,7 +8,11 @@ import { rhythm, scale } from '../utils/typography'
 
 // TODO: make dynamic
 const postUrl = date =>
-  `https://react.holiday/${date.getFullYear()}/${date.getDay()}/`
+  `https://react.holiday/${date.getFullYear()}/${date.getDate()}/`
+
+const nextUrl = date => `/${date.getFullYear()}/${date.getDate() + 1}/`
+
+const prevUrl = date => `/${date.getFullYear()}/${date.getDate() - 1}/`
 
 class BlogPostTemplate extends React.Component {
   constructor() {
@@ -37,10 +42,7 @@ class BlogPostTemplate extends React.Component {
             content={}`}
           />
           */}
-          <meta
-            property="og:url"
-            content={url}
-          />
+          <meta property="og:url" content={url} />
           <meta
             property="og:image"
             content="https://react.holiday/react-holiday-og.jpg"
@@ -59,6 +61,23 @@ class BlogPostTemplate extends React.Component {
         </p>
         */}
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div
+          style={{
+            display: 'flex',
+            justifyContent: 'space-between',
+            marginBottom: 32,
+          }}
+        >
+          {(new Date(post.frontmatter.date)).getDate() > 1 && (
+            <Link to={prevUrl(new Date(post.frontmatter.date))}>
+              ← Previous
+            </Link>
+          )}
+          <div />
+          {(new Date(post.frontmatter.date)).getDate() < 20 && (
+            <Link to={nextUrl(new Date(post.frontmatter.date))}>Next →</Link>
+          )}
+        </div>
         <hr
           style={{
             marginBottom: rhythm(1),

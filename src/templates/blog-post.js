@@ -48,7 +48,7 @@ class BlogPostTemplate extends React.Component {
             content="https://react.holiday/react-holiday-og.jpg"
           />
         </Helmet>
-        <h1>{post.frontmatter.title}</h1>
+        <h1 className="measure">{post.frontmatter.title}</h1>
         {/*<p
           style={{
             ...scale(-1 / 5),
@@ -74,7 +74,7 @@ class BlogPostTemplate extends React.Component {
             </Link>
           )}
           <div />
-          {(new Date(post.frontmatter.date)).getDate() < 20 && (
+          {(new Date(post.frontmatter.date)).getDate() < 21 && (
             <Link to={nextUrl(new Date(post.frontmatter.date))}>Next →</Link>
           )}
         </div>

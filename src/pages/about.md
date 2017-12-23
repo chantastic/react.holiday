@@ -4,7 +4,7 @@ date: "2017-12-01T12:00:00.000Z"
 ---
 
 <div class="measure">
-This is a React advent thingy; the whole 25 days, 25 lessons deal.
+This is a React advent thingy; the whole 24 days, 24 lessons deal.
 
 ### Why?
 

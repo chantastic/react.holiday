@@ -35,4 +35,6 @@
   border-radius:.25em
 }
 
-ul { padding-left: 1em }
+ul { padding-left: 1.2em }
+
+.short-code code { line-height: 1em }

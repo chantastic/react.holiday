@@ -74,7 +74,7 @@ class BlogPostTemplate extends React.Component {
             </Link>
           )}
           <div />
-          {(new Date(post.frontmatter.date)).getDate() < 21 && (
+          {(new Date(post.frontmatter.date)).getDate() < 24 && (
             <Link to={nextUrl(new Date(post.frontmatter.date))}>Next →</Link>
           )}
         </div>

@@ -43,7 +43,7 @@ class Template extends React.Component {
           style={{
             fontFamily: 'Montserrat, sans-serif',
             marginTop: 0,
-            marginBottom: rhythm(-1),
+            // marginBottom: rhythm(-1),
           }}
         >
           <Link
@@ -67,6 +67,43 @@ class Template extends React.Component {
         }}
       >
         {header}
+
+        <div
+          style={{
+            maxWidth: '16em',
+            fontSize: '1.25em',
+            border: '4px solid #fe0',
+            padding: '.5em',
+            borderRadius: '.25em',
+            backgroundColor: "#ffffdd",
+            textAlign: 'center',
+            fontFamily: `system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"`,
+            color: "#444",
+          }}
+        >
+          <span style={{ marginBottom: '.5em', display: 'inline-block', fontWeight: 900 }}>
+            🎉 Now on video! 📺
+          </span>
+          <br />
+          <a
+            style={{
+              display: 'inline-block',
+              backgroundColor: 'black',
+              width: '100%',
+              textAlign: 'center',
+              borderRadius: ".125em",
+              backgroundColor: "#ff0077",
+              color: "white",
+              fontWeight: 600,
+              fontStyle: "oblique"
+            }}
+            href="https://gum.co/essential-react"
+            target="_blank"
+          >
+            Buy, buy, buy!!!
+          </a>
+        </div>
+
         {children()}
       </Container>
     )

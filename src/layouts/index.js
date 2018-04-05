@@ -97,7 +97,7 @@ class Template extends React.Component {
               fontWeight: 600,
               fontStyle: "oblique"
             }}
-            href="https://gum.co/essential-react"
+            href="https://learnreact.com/courses/2018-essential-react"
             target="_blank"
           >
             Buy, buy, buy!!!

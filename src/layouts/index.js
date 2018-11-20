@@ -129,7 +129,7 @@ class Template extends React.Component {
 
         <br />
         <p>
-          We'll start from basics get all the way to Suspense, Hooks, and advanced composition!
+          We'll start from basics and get all the way to Suspense, Hooks, and advanced composition!
           <br />
           Each day is a 2-3 minute read with CodeSandbox and quick assignments.
           <br />

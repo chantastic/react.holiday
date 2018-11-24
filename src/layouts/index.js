@@ -90,9 +90,7 @@ class Template extends React.Component {
             style={{ margin: 0, padding: 0 }}
           >
             <div id="mc_embed_signup_scroll">
-              <label htmlFor="mce-EMAIL">
-                Subscribe for December 2018!
-              </label>
+              <label htmlFor="mce-EMAIL">Subscribe for December 2018!</label>
               <input
                 type="email"
                 name="EMAIL"
@@ -111,11 +109,17 @@ class Template extends React.Component {
                   tabIndex="-1"
                 />
               </div>
-              <div>
-                <input type="hidden" name="SOURCE" value="react.holiday" />
+              <div className="mc-field-group input-group">
+                <input
+                  aria-hidden="true"
+                  type="hidden"
+                  value="1"
+                  name="group[35397][1]"
+                  id="mce-group[35397]-35397-0"
+                />
               </div>
               <div className="clear">
-                <input        
+                <input
                   type="submit"
                   value="Subscribe"
                   name="subscribe"
@@ -129,12 +133,13 @@ class Template extends React.Component {
 
         <br />
         <p>
-          We'll start from basics and get all the way to Suspense, Hooks, and advanced composition!
+          We'll start from basics and get all the way to Suspense, Hooks, and
+          advanced composition!
           <br />
           Each day is a 2-3 minute read with CodeSandbox and quick assignments.
           <br />
           Check out 2017 (below) for examples.
-          </p>
+        </p>
 
         {/*
         <div

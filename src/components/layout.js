@@ -1,5 +1,7 @@
 import React from 'react'
 import Link from 'gatsby-link'
+// import { StaticQuery, graphql } from "gatsby"
+
 import { Container } from 'react-responsive-grid'
 import './prism.css'
 import './other.css'
@@ -12,9 +14,9 @@ class Template extends React.Component {
     let header
 
     let rootPath = `/`
-    if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
-      rootPath = __PATH_PREFIX__ + `/`
-    }
+    // if (typeof __PREFIX_PATHS__ !== `undefined` && __PREFIX_PATHS__) {
+    //   rootPath = __PATH_PREFIX__ + `/`
+    // }
 
     if (location.pathname === rootPath) {
       header = (
@@ -185,7 +187,7 @@ class Template extends React.Component {
         </div>
           */}
 
-        {children()}
+        {children}
       </Container>
     )
   }

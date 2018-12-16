@@ -2,9 +2,10 @@ import React from 'react'
 import Link from 'gatsby-link'
 import Helmet from 'react-helmet'
 import get from 'lodash/get'
+import { graphql } from 'gatsby'
 
-import Bio from '../components/Bio'
-import { rhythm, scale } from '../utils/typography'
+// import Bio from '../components/Bio'
+import { rhythm } from '../utils/typography'
 
 // TODO: make dynamic
 const postUrl = date =>
@@ -60,7 +61,7 @@ class BlogPostTemplate extends React.Component {
           {post.frontmatter.date}
         </p>
         */}
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        <div dangerouslySetInnerHTML={{ __html: post.rawMarkdownBody }} />
         <div
           style={{
             display: 'flex',
@@ -68,13 +69,13 @@ class BlogPostTemplate extends React.Component {
             marginBottom: 32,
           }}
         >
-          {(new Date(post.frontmatter.date)).getDate() > 1 && (
+          {new Date(post.frontmatter.date).getDate() > 1 && (
             <Link to={prevUrl(new Date(post.frontmatter.date))}>
               ← Previous
             </Link>
           )}
           <div />
-          {(new Date(post.frontmatter.date)).getDate() < 24 && (
+          {new Date(post.frontmatter.date).getDate() < 24 && (
             <Link to={nextUrl(new Date(post.frontmatter.date))}>Next →</Link>
           )}
         </div>
@@ -99,7 +100,6 @@ class BlogPostTemplate extends React.Component {
                 <label htmlFor="mce-EMAIL" />
                 <input
                   type="email"
-                  value=""
                   name="EMAIL"
                   className="required email"
                   id="mce-EMAIL"
@@ -172,7 +172,7 @@ export const pageQuery = graphql`
     }
     markdownRemark(fields: { slug: { eq: $slug } }) {
       id
-      html
+      rawMarkdownBody
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

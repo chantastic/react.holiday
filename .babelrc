@@ -1,4 +1,5 @@
 {
-  "presets": ['react', 'es2015', 'stage-1'],
-  "plugins": ['add-module-exports']
+  "presets": ["@babel/react", "@babel/preset-env"],
+  "plugins": ["@babel/plugin-proposal-class-properties"]
+  // "plugins": ['add-module-exports']
 }

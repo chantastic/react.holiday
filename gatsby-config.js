@@ -1,12 +1,12 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Starter Blog',
-    author: 'Kyle Mathews',
-    description: 'A starter blog demonstrating what Gatsby can do.',
-    siteUrl: 'https://gatsby-starter-blog-demo.netlify.com/',
+    title: '⚛️🌲 React Holiday',
+    author: 'chantastic',
+    description: 'An advent calendar to get you started in React.',
+    siteUrl: 'https://react.holiday/',
     social: {
-      twitter: 'kylemathews'
-    }
+      twitter: 'chantastic',
+    },
   },
   plugins: [
     {
@@ -57,8 +57,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Gatsby Starter Blog`,
-        short_name: `GatsbyJS`,
+        name: '⚛️🌲 React Holiday',
+        short_name: `React Holiday`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#663399`,

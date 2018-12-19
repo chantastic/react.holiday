@@ -62,10 +62,90 @@ class Layout extends React.Component {
         }}
       >
         {header}
+        <ReactHolidayMailchimp />
         {children}
       </div>
     )
   }
+}
+
+function ReactHolidayMailchimp() {
+  return (
+    <React.Fragment>
+      <link
+        href="//cdn-images.mailchimp.com/embedcode/slim-10_7.css"
+        rel="stylesheet"
+        type="text/css"
+      />
+      <style type="text/css">
+        {`
+	#mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+     `}
+      </style>
+      <div id="mc_embed_signup">
+        <form
+          action="https://learnreact.us9.list-manage.com/subscribe/post?u=03b6ee2f58c8b4427c8ba9735&amp;id=f97aebbc64"
+          method="post"
+          id="mc-embedded-subscribe-form"
+          name="mc-embedded-subscribe-form"
+          className="validate"
+          target="_blank"
+          noValidate
+          style={{ margin: 0, padding: 0 }}
+        >
+          <div id="mc_embed_signup_scroll">
+            <label htmlFor="mce-EMAIL">Subscribe for December 2018!</label>
+            <input
+              type="email"
+              name="EMAIL"
+              className="email"
+              id="mce-EMAIL"
+              placeholder="email address"
+              required
+            />
+            <div
+              style={{ position: 'absolute', left: -5000 }}
+              aria-hidden="true"
+            >
+              <input
+                type="text"
+                name="b_03b6ee2f58c8b4427c8ba9735_f97aebbc64"
+                tabIndex="-1"
+              />
+            </div>
+            <div className="mc-field-group input-group">
+              <input
+                aria-hidden="true"
+                type="hidden"
+                value="1"
+                name="group[35397][1]"
+                id="mce-group[35397]-35397-0"
+              />
+            </div>
+            <div className="clear">
+              <input
+                type="submit"
+                value="Subscribe"
+                name="subscribe"
+                id="mc-embedded-subscribe"
+                className="button"
+              />
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <br />
+      <p>
+        We'll start from basics and get all the way to Suspense, Hooks, and
+        advanced composition!
+        <br />
+        Each day is a 2-3 minute read with CodeSandbox and quick assignments.
+        <br />
+        Check out 2017 (below) for examples.
+      </p>
+    </React.Fragment>
+  )
 }
 
 export default Layout

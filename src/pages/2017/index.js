@@ -8,14 +8,18 @@ import { rhythm } from '../../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
-    const { data } = this.props;
+    const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="All posts" keywords={['blog', 'gatsby', 'javascript', 'react']} />
+        <SEO
+          title="All posts"
+          keywords={['blog', 'gatsby', 'javascript', 'react']}
+        />
         <Bio />
+        <h1>2017</h1>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -48,7 +52,10 @@ export const pageQuery = graphql`
         title
       }
     }
-    allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+    allMarkdownRemark(
+      filter: { frontmatter: { date: { regex: "/2017/" } } }
+      sort: { fields: [frontmatter___date], order: ASC }
+    ) {
       edges {
         node {
           excerpt

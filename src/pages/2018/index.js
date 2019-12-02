@@ -1,10 +1,10 @@
 import React from 'react'
 import { Link, graphql } from 'gatsby'
 
-import Bio from '../components/bio'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
-import { rhythm } from '../utils/typography'
+import Bio from '../../components/bio'
+import Layout from '../../components/layout'
+import SEO from '../../components/seo'
+import { rhythm } from '../../utils/typography'
 
 class BlogIndex extends React.Component {
   render() {
@@ -18,9 +18,8 @@ class BlogIndex extends React.Component {
           title="All posts"
           keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
-        <br />
         <Bio />
-        <Link to="/2017">2017 archive →</Link>
+        <h1>2018</h1>
         {posts.map(({ node }) => {
           const title = node.frontmatter.title || node.fields.slug
           return (
@@ -55,7 +54,7 @@ export const pageQuery = graphql`
     }
     allMarkdownRemark(
       filter: { frontmatter: { date: { regex: "/2018/" } } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___date], order: ASC }
     ) {
       edges {
         node {

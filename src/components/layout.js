@@ -36,7 +36,6 @@ class Layout extends React.Component {
           style={{
             fontFamily: 'Montserrat, sans-serif',
             marginTop: 0,
-            marginBottom: rhythm(-1),
           }}
         >
           <Link
@@ -94,7 +93,7 @@ function ReactHolidayMailchimp() {
           style={{ margin: 0, padding: 0 }}
         >
           <div id="mc_embed_signup_scroll">
-            <label htmlFor="mce-EMAIL">Subscribe for December 2018!</label>
+            <label htmlFor="mce-EMAIL">Subscribe for other great React fun!</label>
             <input
               type="email"
               name="EMAIL"
@@ -134,16 +133,6 @@ function ReactHolidayMailchimp() {
           </div>
         </form>
       </div>
-
-      <br />
-      <p>
-        We'll start from basics and get all the way to Suspense, Hooks, and
-        advanced composition!
-        <br />
-        Each day is a 2-3 minute read with CodeSandbox and quick assignments.
-        <br />
-        Check out 2017 (below) for examples.
-      </p>
     </React.Fragment>
   )
 }

@@ -60,7 +60,7 @@ module.exports = {
         name: '⚛️🌲 React Holiday',
         short_name: `React Holiday`,
         start_url: `/`,
-        background_color: `#ffffff`,
+        background_color: `#fafafa`,
         theme_color: `#663399`,
         display: `minimal-ui`,
         icon: `content/assets/gatsby-icon.png`,

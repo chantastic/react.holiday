@@ -62,7 +62,7 @@ class Layout extends React.Component {
         }}
       >
         {header}
-        <ReactHolidayMailchimp />
+        {/* <ReactHolidayMailchimp /> */}
         {children}
       </div>
     )

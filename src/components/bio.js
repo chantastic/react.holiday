@@ -28,10 +28,23 @@ function Bio() {
               }}
             />
             <p>
-              Written by <strong>{author}</strong>.{' '}
+              I'm{' '}
+              <a
+                href={`https://twitter.com/${social.twitter}`}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                chantastic
+              </a>{' '}
+              👋
               <br />
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Follow his nonsense on Twitter.
+              Designerd and Host of{' '}
+              <a
+                href={`https://twitter.com/${social.twitter}`}
+                target="_blank"
+                rel="noreferrer noopener"
+              >
+                React Podcast
               </a>
             </p>
           </div>

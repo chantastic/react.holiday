@@ -1,2 +1,0 @@
-# Redirect default Netlify subdomain to primary domain
-http://reactholiday.netlify.com/* http://react.holiday/:splat 301!

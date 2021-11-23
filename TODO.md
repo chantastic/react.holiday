@@ -9,7 +9,7 @@
 <!-- The code below should work great for you. If you're having trouble, let us know. -->
 <script
   src="https://cdn.usefathom.com/script.js"
-  data-site="RDEMVNSG"
+  data-site="ZHUODSNX"
   defer
 ></script>
 ```
@@ -19,7 +19,7 @@
 <script
   src="https://cdn.usefathom.com/script.js"
   data-spa="auto"
-  data-site="RDEMVNSG"
+  data-site="ZHUODSNX"
   defer
 ></script>
 ```

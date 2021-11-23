@@ -46,3 +46,5 @@
 ---
 
 # Day 2
+
+- prefix image paths with `/`

@@ -1,12 +1,18 @@
 ---
-// Component Imports
-import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/BlogHeader.astro';
----
+import BaseHead from '../../components/BaseHead.astro';
+import BlogHeader from '../../components/BlogHeader.astro';
+import BlogPostPreview from '../../components/BlogPostPreview.astro';
 
+let title = 'React Holiday';
+let description = 'An annual celebration of React.';
+let permalink = 'https://react.holiday/';
+
+let allPosts = await Astro.fetchContent('./*.md');
+allPosts = allPosts.sort((a, b) =>  new Date(a.date).valueOf() - new Date(b.date).valueOf());
+---
 <html lang="en">
   <head>
-    <BaseHead title="React Holiday" description="An annual celebration of React" permalink="https://react.holiday/" />
+    <BaseHead title={title} description={description} permalink={permalink} />
     <link rel="stylesheet" href="/blog.css" />
 
     <style>
@@ -50,19 +56,11 @@ import BlogHeader from '../components/BlogHeader.astro';
     <div class="wrapper">
       <main class="content">
         <section class="intro">
-          <h1>React 18 Beta!</h1>
-          <p>
-            Great React developers know more than just Components, Hooks, and
-            statement management. They masters of language — JavaScript, JSX, CSS,
-            and HTML.
-          </p>
-          <p>
-            This React Holiday covers 25 essential language skills for
-            professional React developers.
-          </p>
-          <p>
-            <h3>Sign up. Level up!</h3>
-          </p>
+          <h1 class="latest">{title}</h1>
+          <p>{description}</p>
+        </section>
+        <section aria-label="Blog post list">
+          {allPosts.map(p => <BlogPostPreview post={p} />)}
         </section>
       </main>
     </div>

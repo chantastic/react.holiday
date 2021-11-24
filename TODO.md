@@ -30,3 +30,8 @@
   - solution: https://docs.astro.build/guides/pagination/
 - Add /rss.xml
   - solution: https://docs.astro.build/guides/rss/index.html
+
+## Day 2
+
+- Next and previous titles
+- `/content` directory?

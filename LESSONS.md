@@ -48,3 +48,41 @@
 # Day 2
 
 - prefix image paths with `/`
+- difference between pagination `[page]` and `[...page]`
+  - reading thru the docs makes it sound like `[...page]` will also export and index at `/page`. but that's not what it's saying. it's saying that the first paginated link will be at `/page` not `/page/1`
+  - we still need to make our own index. which totally makes sense
+- `prev/next` don't have additional access to content, which is a bummer. possible that there are other ways to back into this
+
+Here is the boilerplate for pagination:
+
+```astro
+---
+// pages/whatever/[page].astro
+export async function getStaticPaths({ paginate }) {
+  let allPosts = await Astro.fetchContent('../2017/*.md');
+  allPosts = allPosts.sort((a, b) =>  new Date(a.date).valueOf() - new Date(b.date).valueOf());
+
+  return paginate(allPosts, { pageSize: 1 });
+}
+const { page } = Astro.props;
+---
+<h1>Page {page.currentPage}</h1>
+<ul>
+  {page.data.map(item => <li><a href="#">{item.title}</a></li>)}
+</ul>
+<div>{page.total}</div>
+{
+	page.url.prev ?  <a href={page.url.prev}>Prev</a> : null
+}
+{
+	page.url.next ?  <a href={page.url.next}>Next</a> : null
+}
+```
+
+### Articles opened
+- https://docs.astro.build/es/guides/markdown-content/index.html#images-and-videos
+- https://docs.astro.build/core-concepts/project-structure/#public
+- https://docs.astro.build/guides/pagination/
+- https://docs.astro.build/core-concepts/routing/
+- https://docs.astro.build/reference/api-reference/#the-pagination-page-prop
+- https://docs.astro.build/getting-started/

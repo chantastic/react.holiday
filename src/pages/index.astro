@@ -1,48 +1,14 @@
 ---
 // Component Imports
 import BaseHead from '../components/BaseHead.astro';
-import BlogHeader from '../components/BlogHeader.astro';
 ---
 
 <html lang="en">
   <head>
     <BaseHead title="React Holiday" description="An annual celebration of React" permalink="https://react.holiday/" />
-    <link rel="stylesheet" href="/blog.css" />
-
-    <style>
-      header {
-        width: 100%;
-        height: 100%;
-        background-color: var(--theme-bg-offset);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-      }
-
-      .content {
-        margin-top: 4rem;
-        margin-bottom: 8rem;
-      }
-
-      .content :global(main > * + *) {
-        margin-top: 1rem;
-      }
-
-      .intro {
-        padding-bottom: 4rem;
-        margin-bottom: 2rem;
-        border-bottom: 4px solid var(--theme-divider);
-      }
-
-      .intro > * {
-        margin: 0;
-      }
-
-      .latest {
-        font-size: 2.5rem;
-        font-weight: 700;
-      }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
     <script
       src="https://cdn.usefathom.com/script.js"
       data-site="ZHUODSNX"
@@ -51,25 +17,94 @@ import BlogHeader from '../components/BlogHeader.astro';
   </head>
 
   <body>
-    <BlogHeader />
-    <div class="wrapper">
-      <main class="content">
-        <section class="intro">
-          <h1>React 18 Beta!</h1>
+    <div data-layout data-prose>
+      <header>
+        <span style="font-size: 2.5rem; font-weight: 900">
+        ⚛️🌲 React Holiday 2021
+        </span>
+      </header>
+      <main>
+        <section>
+          <h1>React 18 beta!</h1>
           <p>
-            Great React developers know more than just Components, Hooks, and
-            statement management. They masters of language — JavaScript, JSX, CSS,
-            and HTML.
+            Welcome to the future!
           </p>
           <p>
-            This React Holiday covers 25 essential language skills for
-            professional React developers.
+            This year, we'll celebrate React 18 with 18 lessons delivered to your inbox.
           </p>
           <p>
-            <h3>Sign up. Level up!</h3>
+            This season of React Holiday features
           </p>
+          <ul>
+            <li>18 lessons</li>
+            <li>3 code-along videos</li>
+            <li>3 quizes</li>
+          </ul>
+          <p>
+            <strong>Sign up to get all 25 emails to you inbox 📨</strong>
+          </p>
+          
+          <p style="padding-top: 2rem; padding-bottom: 2rem">
+          <script async data-uid="219c16a45b" src="https://chantastic.ck.page/219c16a45b/index.js"></script>
+          </p>
+
+          <div data-author-attribution>
+            <img
+              src="https://chan.dev/avatars/latest"
+              alt=""
+              data-avatar
+              data-author-attribution--avatar
+            />
+            <div>
+              I'm <a href="https://twitter.com/chantastic" rel="noopener noreferrer" target="_blank">@chantastic</a>
+              <br />
+              Host of <a href="https://reactpodcast.com">React Podcast</a>
+            </div>
+          </div>
         </section>
       </main>
+      <footer></footer>
     </div>
   </body>
 </html>
+
+<style lang="scss">
+html, body {
+  margin: 0;
+  padding: 0;
+  background-color: whitesmoke;
+}
+[data-layout] {
+  --layout--width: 64ch;
+  padding-inline-start: calc((100vw - var(--layout--width)) / 2);
+  padding-inline-end: calc((100vw - var(--layout--width)) / 2);
+  padding-block-start: 3rem;
+
+  font-family: 'Merriweather', serif;
+  color: hsla(0, 0%, 0%, .8)
+}
+
+[data-prose] {
+  line-height: 1.6;
+}
+
+[data-prose] code {
+  font-size: 2.5ex;
+}
+
+[data-avatar] {
+  --avatar--size: 6rem;
+  width: var(--avatar--size);
+  height: var(--avatar--size);
+  border-radius: 100%;
+}
+
+[data-author-attribution] {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+[data-author-attribution--avatar] {
+  --avatar--size: 4rem;
+}
+</style>

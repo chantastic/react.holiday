@@ -86,3 +86,8 @@ const { page } = Astro.props;
 - https://docs.astro.build/core-concepts/routing/
 - https://docs.astro.build/reference/api-reference/#the-pagination-page-prop
 - https://docs.astro.build/getting-started/
+
+## Day 3
+
+- `<style lang="scss">`
+https://docs.astro.build/es/guides/styling/index.html#-css-preprocessors-sass-stylus-etc

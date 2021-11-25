@@ -80,6 +80,7 @@ const { page } = Astro.props;
 ```
 
 ### Articles opened
+
 - https://docs.astro.build/es/guides/markdown-content/index.html#images-and-videos
 - https://docs.astro.build/core-concepts/project-structure/#public
 - https://docs.astro.build/guides/pagination/
@@ -90,9 +91,32 @@ const { page } = Astro.props;
 ## Day 3
 
 - `<style lang="scss">`
-https://docs.astro.build/es/guides/styling/index.html#-css-preprocessors-sass-stylus-etc
+  https://docs.astro.build/es/guides/styling/index.html#-css-preprocessors-sass-stylus-etc
 - data fetching: https://docs.astro.build/guides/data-fetching/index.html
 - env variables: https://docs.astro.build/guides/environment-variables/index.html
 - MUST BE PREFIXED WITH `PUBLIC`
 - Astro has a `<Markdown>` component
   - https://docs.astro.build/guides/markdown-content/index.html#astros-markdown-component
+
+## Things I haven't loved so far
+
+- Lacks polish
+  - Default is `preact` which is very *react-like*
+  - But unsettling
+  - Editor plugins aren't great
+    - `.astro` frontmatter/script support doesnt work
+- `.astro` files are very strange
+  - the frontmatter style is unsettling to me
+  - can't do multiple frontmatters like you can do multiple scripts in svelte and othe SCF file-types
+- Twitter community isn't there yet. I threw out a a handful of questions and tagged @astrodotbuild to no response, RT, or tag
+- The way modules are authored is so strange to me. I find it super confusing that component code is written directly in the module. but then you also export functions like `getStaticPaths`. This makes sense in Next because you're also exporting a default component (where all the page code lives)
+  - this is particularly odd feeling with pagination, with the export of getStaticPaths, and then right below it the `let { page } = Astro.props` page code
+- People who are super excited about it don't seem to be super knowledgable about it
+- Some somewhat irritating customs (if you're familiar with vite)
+  - Only `PUBLIC_`-prefixed `.env` vars are "made available to client-side code". I lost some time to this because I don't read docs top-to-bottom. I search and read the part I need. It's not obvious (when using the docs like this) that `PUBLIC_` is required. And honestly, it's not clear even after reading them. Because I'm not exposing a client-side key. I'm using a key that I'm running at build time
+  - But that's kinda the problem with Astro is that it's super clever about not having to know about when your component runs. So, you have to — i suppose — assume that everything is client-exposed. That's irritating tho.
+- Docs are thorough but not clear. Several times I read something thru, thinking I understood it, but not understanding it at all.
+
+## Things that are great
+- Partial hydration
+- Noticably fast

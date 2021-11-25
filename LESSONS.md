@@ -91,3 +91,8 @@ const { page } = Astro.props;
 
 - `<style lang="scss">`
 https://docs.astro.build/es/guides/styling/index.html#-css-preprocessors-sass-stylus-etc
+- data fetching: https://docs.astro.build/guides/data-fetching/index.html
+- env variables: https://docs.astro.build/guides/environment-variables/index.html
+- MUST BE PREFIXED WITH `PUBLIC`
+- Astro has a `<Markdown>` component
+  - https://docs.astro.build/guides/markdown-content/index.html#astros-markdown-component

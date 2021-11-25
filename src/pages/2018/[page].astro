@@ -1,0 +1,42 @@
+---
+import Layout from "../../layouts/BlogPost.astro"
+import BaseHead from '../../components/BaseHead.astro';
+import { Markdown } from "astro/components"
+
+export async function getStaticPaths({ paginate }) {
+  const response = await fetch(`https://youtube.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=50&playlistId=PLnc_NxpmOxaPbyq_lEGZKWF7R3BbK3PSZ&key=${import.meta.env.PUBLIC_YOUTUBE_API_KEY}`);
+  let allVideos = await response.json();
+
+  return paginate(allVideos.items, { pageSize: 1 });
+}
+
+const { content, page } = Astro.props;
+const { contentDetails, snippet } = page.data[0];
+console.log(snippet)
+---
+<html lang='en'>
+  <head>
+    <BaseHead title={snippet.title} description={snippet.description} permalink={""} />
+    <script src="https://cdn.usefathom.com/script.js" data-site="ZHUODSNX" defer></script>
+  </head>
+  <body>
+    <main>
+      <a href="/2018">← Back to all 2018</a>
+      
+      <h1>{snippet.title}</h1>
+
+      <Markdown content={snippet.description} />
+
+      <iframe width="560" height="315" src={`https://www.youtube.com/embed/${contentDetails.videoId}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+      <div>
+        {
+          page.url.prev ?  <a href={page.url.prev}>Prev</a> : null
+        }
+        {
+          page.url.next ?  <a href={page.url.next}>Next</a> : null
+        }
+      </div>
+    </main>
+  </body>
+</html>

@@ -19,26 +19,25 @@ import BaseHead from '../components/BaseHead.astro';
   <body>
     <div data-layout data-prose>
       <header>
-        <span style="font-size: 2.5rem; font-weight: 900">
-        ⚛️🌲 React Holiday 2021
+        <span style="font-size: 2.25rem; font-weight: 900">
+        ⚛️🌲 <span style="white-space: nowrap">React Holiday</span>
         </span>
       </header>
       <main>
         <section>
-          <h1>React 18 beta!</h1>
           <p>
             Welcome to the future!
           </p>
           <p>
-            This year, we'll celebrate React 18 with 18 lessons delivered to your inbox.
+            This year, we'll celebrate <strong>React 18 <code>beta</code></strong> with 18 lessons delivered to your inbox.
           </p>
           <p>
             This season of React Holiday features
           </p>
           <ul>
-            <li>18 lessons</li>
-            <li>3 code-along videos</li>
-            <li>3 quizes</li>
+            <li><em>18 lessons</em></li>
+            <li><em>3 code-along videos</em></li>
+            <li><em>3 quizes</em></li>
           </ul>
           <p>
             <strong>Sign up to get all 25 emails to you inbox 📨</strong>
@@ -76,8 +75,8 @@ html, body {
 }
 [data-layout] {
   --layout--width: 64ch;
-  padding-inline-start: calc((100vw - var(--layout--width)) / 2);
-  padding-inline-end: calc((100vw - var(--layout--width)) / 2);
+  padding-inline-start: max(1.5rem, calc((100vw - var(--layout--width)) / 2));
+  padding-inline-end: max(1.5rem, calc((100vw - var(--layout--width)) / 2));
   padding-block-start: 3rem;
 
   font-family: 'Merriweather', serif;
@@ -107,4 +106,5 @@ html, body {
 [data-author-attribution--avatar] {
   --avatar--size: 4rem;
 }
+[data-word-wrap=""] {}
 </style>

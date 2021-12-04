@@ -1,0 +1,22 @@
+- 6
+- 7
+- 8
+- 9
+- 10
+- video
+- quiz
+
+- + replace legacy root API's callback argument
+- + Use now root API alongsied legacy root API
+- + Conditionally render with legacy root API or new root API
+- + Opt in to automatic batching with createRoot
+-   - Remove unstalbe_batchedUpdates Calls
+- + Opt-out of Automatic batching with ReactDOM.flushSync
+- (extra content) Handle Class Component setState edge-case with ReactDOM.flushSync
+- Stay up-to-date on React with the working group
+
+-
+- "suspensify"
+- startTransition
+- useTransition
+- useTransition/isPending

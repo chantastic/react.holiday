@@ -1,13 +1,5 @@
-- 6
-- 7
-- 8
-- 9
-- 10
-- video
-- quiz
-
-- + replace legacy root API's callback argument
-- + Use now root API alongsied legacy root API
+- + Replace the legacy root API's callback argument
+- + Use new root API alongsied legacy root API
 - + Conditionally render with legacy root API or new root API
 - + Opt in to automatic batching with createRoot
 -   - Remove unstalbe_batchedUpdates Calls

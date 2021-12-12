@@ -35,3 +35,10 @@
 
 - Next and previous titles
 - `/content` directory?
+
+---
+
+## Production notes
+
+### Start with markdown in repo
+It sure is a lot easier having this controlled in version controlled first. And — while ConvertKit has a shitty way of interpretting markdown — Convert will interpret the markdown. I have to re-work everything when pulling it the other direction.

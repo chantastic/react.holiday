@@ -5,6 +5,32 @@ import BlogPost from '../components/BlogPost.astro';
 
 const {content} = Astro.props;
 const {title, description, publishDate, author, heroImage, permalink, alt} = content;
+
+const data = Astro.fetchContent('../pages/2021/*.md');
+const sortedData = data.sort(
+  (a, b) => new Date(a.date) - new Date(b.date) 
+)
+
+let nextArticle = null;
+let prevArticle = null;
+sortedData.forEach((_ /* this is weird */, i) => {
+  // let currentArticle = sortedData[i];
+  if (sortedData[i].title === title) {
+    let next = sortedData[i - 1]
+    let prev = sortedData[i + 1]
+
+    if(next) nextArticle = { title: next.title, url: next.url}
+    if (prev) prevArticle = { title: prev.title, url: prev.url}
+  }
+})
+console.log(nextArticle)
+console.log(prevArticle)
+// console.log(sortedData[13].title === title)
+// #1: React 18's gradual adoption strategy
+// #10: Opt out of automatic batching with ReactDOM.flushSync
+// #11: Video Recap!
+// i have no idea how to sort this correctly
+
 ---
 
 <html lang={ content.lang || 'en' }>
@@ -19,6 +45,16 @@ const {title, description, publishDate, author, heroImage, permalink, alt} = con
     <div class="wrapper">
       <BlogPost title={title} author={author} heroImage={heroImage} publishDate={publishDate} alt={alt}>
         <slot />
+        <div style="display: flex; justify-content: space-between">
+          {nextArticle
+            ? <a href={nextArticle?.url}>← {nextArticle?.title ? nextArticle?.title: "Previous post"}</a>
+            : <span />
+          }
+          {prevArticle
+            ? <a href={prevArticle?.url}>{prevArticle?.title ? prevArticle?.title: "Previous post"} →</a>
+            : <span />
+          }
+        </div>
       </BlogPost>
       <script async data-uid="219c16a45b" src="https://chantastic.ck.page/219c16a45b/index.js"></script>
     </div>

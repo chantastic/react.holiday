@@ -120,3 +120,13 @@ const { page } = Astro.props;
 ## Things that are great
 - Partial hydration
 - Noticably fast
+
+## 2021-12-13
+
+- pagination with title: https://github.com/chantastic/react.holiday/commit/24a3df03a07471eac6e9868d643edb468e96ceb0
+
+## 2021-12-14
+
+- Add build options for canonical urls
+  - https://docs.astro.build/guides/deploy/index.html#github-pages
+  - `01:35 PM [config] Set "buildOptions.site" to generate correct canonical URLs and sitemap`

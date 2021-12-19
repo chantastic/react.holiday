@@ -42,3 +42,7 @@
 
 ### Start with markdown in repo
 It sure is a lot easier having this controlled in version controlled first. And — while ConvertKit has a shitty way of interpretting markdown — Convert will interpret the markdown. I have to re-work everything when pulling it the other direction.
+
+---
+- links need to have fully qualified urls if they're going to be copy/pasted into emails.
+  - if i render emails from the app, it would be nice to have the system build those for me.

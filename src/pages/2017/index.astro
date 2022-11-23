@@ -1,18 +1,27 @@
 ---
-import BaseHead from '../../components/BaseHead.astro';
-import BlogHeader from '../../components/BlogHeader.astro';
-import BlogPostPreview from '../../components/BlogPostPreview.astro';
+import BaseHead from "../../components/BaseHead.astro";
+import BlogHeader from "../../components/BlogHeader.astro";
+import BlogPostPreview from "../../components/BlogPostPreview.astro";
 
-let title = 'React Holiday';
-let description = 'An annual celebration of React.';
-let permalink = 'https://react.holiday/';
+let title = "React Holiday";
+let description = "An annual celebration of React.";
+let permalink = "https://react.holiday/";
 
-let allPosts = await Astro.fetchContent('./*.md');
-allPosts = allPosts.sort((a, b) =>  new Date(a.date).valueOf() - new Date(b.date).valueOf());
+let allPosts = await Astro.glob("./*.md");
+allPosts = allPosts.sort(
+  (a, b) =>
+    new Date(a.frontmatter.date).valueOf() -
+    new Date(b.frontmatter.date).valueOf()
+);
 ---
+
 <html lang="en">
   <head>
-    <BaseHead title={title} description={description} permalink={permalink} />
+    <BaseHead
+      title={title}
+      description={description}
+      permalink={permalink}
+    />
     <link rel="stylesheet" href="/blog.css" />
 
     <style>
@@ -65,7 +74,7 @@ allPosts = allPosts.sort((a, b) =>  new Date(a.date).valueOf() - new Date(b.date
           <p>{description}</p>
         </section>
         <section aria-label="Blog post list">
-          {allPosts.map(p => <BlogPostPreview post={p} />)}
+          {allPosts.map((p) => <BlogPostPreview post={p} />)}
         </section>
       </main>
     </div>

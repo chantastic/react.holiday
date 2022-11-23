@@ -1,50 +1,120 @@
 ---
 // Component Imports
-import BaseHead from '../components/BaseHead.astro';
+import BaseHead from "../components/BaseHead.astro";
 ---
 
 <html lang="en">
   <head>
-    <BaseHead title="React Holiday" description="An annual celebration of React" permalink="https://react.holiday/" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap" rel="stylesheet">
+    <BaseHead
+      title="React Holiday"
+      description="An annual celebration of React"
+      permalink="https://react.holiday/"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.googleapis.com"
+    />
+    <link
+      rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Merriweather:wght@400;900&display=swap"
+      rel="stylesheet"
+    />
     <script
       src="https://cdn.usefathom.com/script.js"
       data-site="ZHUODSNX"
       defer
     ></script>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        background-color: whitesmoke;
+      }
+      [data-layout] {
+        --layout--width: 64ch;
+        padding-inline-start: max(
+          1.5rem,
+          calc((100vw - var(--layout--width)) / 2)
+        );
+        padding-inline-end: max(
+          1.5rem,
+          calc((100vw - var(--layout--width)) / 2)
+        );
+        padding-block-start: 3rem;
+
+        font-family: "Merriweather", serif;
+        color: hsla(0, 0%, 0%, 0.8);
+      }
+
+      [data-prose] {
+        line-height: 1.6;
+      }
+
+      [data-prose] code {
+        font-size: 2.5ex;
+      }
+
+      [data-avatar] {
+        --avatar--size: 6rem;
+        width: var(--avatar--size);
+        height: var(--avatar--size);
+        border-radius: 100%;
+      }
+
+      [data-author-attribution] {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      [data-author-attribution--avatar] {
+        --avatar--size: 4rem;
+      }
+      [data-word-wrap=""] {
+      }
+    </style>
   </head>
 
   <body>
     <div data-layout data-prose>
       <header>
         <span style="font-size: 2.25rem; font-weight: 900">
-        ⚛️🌲 <span style="white-space: nowrap">React Holiday</span>
+          ⚛️🌲 <span style="white-space: nowrap"
+            >React Holiday</span
+          >
         </span>
       </header>
       <main>
         <section>
+          <p>Welcome to the future!</p>
           <p>
-            Welcome to the future!
+            This year, we'll celebrate <strong
+              >React 18 <code>beta</code>
+            </strong> with 18 lessons delivered to your inbox.
           </p>
-          <p>
-            This year, we'll celebrate <strong>React 18 <code>beta</code></strong> with 18 lessons delivered to your inbox.
-          </p>
-          <p>
-            This season of React Holiday features
-          </p>
+          <p>This season of React Holiday features</p>
           <ul>
             <li><em>18 lessons</em></li>
             <li><em>3 code-along videos</em></li>
             <li><em>3 quizes</em></li>
           </ul>
           <p>
-            <strong>Sign up to get all 25 emails to you inbox 📨</strong>
+            <strong
+              >Sign up to get all 25 emails to you inbox 📨</strong
+            >
           </p>
-          
+
           <p style="padding-top: 2rem; padding-bottom: 2rem">
-          <script async data-uid="219c16a45b" src="https://chantastic.ck.page/219c16a45b/index.js"></script>
+            <script
+              async
+              data-uid="219c16a45b"
+              src="https://chantastic.ck.page/219c16a45b/index.js"
+            ></script>
           </p>
 
           <div data-author-attribution>
@@ -55,9 +125,15 @@ import BaseHead from '../components/BaseHead.astro';
               data-author-attribution--avatar
             />
             <div>
-              I'm <a href="https://twitter.com/chantastic" rel="noopener noreferrer" target="_blank">@chantastic</a>
+              I'm <a
+                href="https://twitter.com/chantastic"
+                rel="noopener noreferrer"
+                target="_blank">@chantastic</a
+              >
               <br />
-              Host of <a href="https://reactpodcast.com">React Podcast</a>
+              Host of <a href="https://reactpodcast.com"
+                >React Podcast</a
+              >
             </div>
           </div>
         </section>
@@ -66,45 +142,3 @@ import BaseHead from '../components/BaseHead.astro';
     </div>
   </body>
 </html>
-
-<style lang="scss">
-html, body {
-  margin: 0;
-  padding: 0;
-  background-color: whitesmoke;
-}
-[data-layout] {
-  --layout--width: 64ch;
-  padding-inline-start: max(1.5rem, calc((100vw - var(--layout--width)) / 2));
-  padding-inline-end: max(1.5rem, calc((100vw - var(--layout--width)) / 2));
-  padding-block-start: 3rem;
-
-  font-family: 'Merriweather', serif;
-  color: hsla(0, 0%, 0%, .8)
-}
-
-[data-prose] {
-  line-height: 1.6;
-}
-
-[data-prose] code {
-  font-size: 2.5ex;
-}
-
-[data-avatar] {
-  --avatar--size: 6rem;
-  width: var(--avatar--size);
-  height: var(--avatar--size);
-  border-radius: 100%;
-}
-
-[data-author-attribution] {
-  display: flex;
-  gap: 1rem;
-  align-items: center;
-}
-[data-author-attribution--avatar] {
-  --avatar--size: 4rem;
-}
-[data-word-wrap=""] {}
-</style>

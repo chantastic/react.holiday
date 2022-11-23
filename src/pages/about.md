@@ -1,6 +1,5 @@
 ---
-setup: |
-  import Layout from '../layouts/BlogPost.astro'
+layout: '../layouts/BlogPost.astro'
 title: About
 publishDate: "2017-12-01T12:00:00.000Z"
 ---

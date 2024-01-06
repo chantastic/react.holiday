@@ -130,3 +130,12 @@ const { page } = Astro.props;
 - Add build options for canonical urls
   - https://docs.astro.build/guides/deploy/index.html#github-pages
   - `01:35 PM [config] Set "buildOptions.site" to generate correct canonical URLs and sitemap`
+
+
+## 2021-12-25
+
+- pandoc's default 'filter' is from markdown to html
+  - `-f markdown -t html`
+  - `-s` is for standalone — which will include a bunch of wrapping html and css
+- [ebook instructions](https://pandoc.org/epub.html)
+- [Pandoc Epub metadata](https://pandoc.org/MANUAL.html#epub-metadata)

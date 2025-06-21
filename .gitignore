@@ -1,3 +1,6 @@
+# astro settings
+.astro/
+
 # build output
 dist
 
